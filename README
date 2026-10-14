@@ -1,0 +1,321 @@
+# 📊 Automatizador de Relatórios Excel
+
+**Sistema de Automação, Análise de Dados e Geração de Relatórios com Python**
+
+![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
+![Pandas](https://img.shields.io/badge/Pandas-An%C3%A1lise%20de%20Dados-150458?logo=pandas)
+![Excel](https://img.shields.io/badge/Excel-Automa%C3%A7%C3%A3o-217346?logo=microsoftexcel)
+![Status](https://img.shields.io/badge/Status-Projeto%20Acad%C3%AAmico-green)
+
+## 📌 Sobre o projeto
+
+O **Automatizador de Relatórios Excel** é uma aplicação desenvolvida em Python para automatizar a leitura, análise e geração de relatórios a partir de planilhas Excel.
+
+O sistema permite importar uma base de dados existente, consultar suas informações, identificar inconsistências e calcular indicadores estatísticos automaticamente.
+
+A aplicação funciona diretamente pelo terminal, utilizando um menu interativo que facilita a execução das funcionalidades.
+
+O projeto foi desenvolvido com foco em **automação de processos administrativos, análise de dados e otimização de rotinas de trabalho**, demonstrando como a programação Python pode ser utilizada para transformar dados de planilhas em informações organizadas.
+
+Diferentemente de sistemas que dependem de dados previamente definidos, esta aplicação permite trabalhar com diferentes tipos de planilhas, sem exigir uma estrutura específica de vendas, produtos ou informações financeiras.
+
+## 🎯 Objetivos
+
+- Automatizar processos de leitura e análise de planilhas Excel.
+- Reduzir tarefas manuais de organização de informações.
+- Desenvolver habilidades de manipulação de dados com Python.
+- Aplicar técnicas de análise exploratória de dados.
+- Identificar registros duplicados e informações ausentes.
+- Calcular indicadores estatísticos automaticamente.
+- Gerar relatórios Excel estruturados e formatados.
+- Integrar conhecimentos administrativos com desenvolvimento de software.
+
+## ⚙️ Funcionalidades
+
+### 1. Importação de planilhas Excel
+
+Permite informar o caminho de um arquivo Excel armazenado no computador.
+
+O sistema identifica as abas disponíveis e permite selecionar qual delas será utilizada na análise.
+
+**Formatos aceitos:**
+- `.xlsx`
+- `.xls` (com a dependência adicional `xlrd`)
+
+### 2. Visualização dos dados
+
+Apresenta diretamente no terminal os primeiros 15 registros da planilha importada.
+
+Essa funcionalidade permite verificar a estrutura e o conteúdo da base antes de realizar a análise.
+
+### 3. Consulta de informações da base
+
+Realiza uma análise inicial da estrutura dos dados, apresentando:
+
+- Quantidade total de registros.
+- Quantidade de colunas.
+- Nomes das colunas.
+- Tipos de dados identificados.
+- Quantidade de valores ausentes por coluna.
+- Quantidade de registros duplicados.
+
+### 4. Análise automática de indicadores
+
+Identifica as colunas numéricas e calcula os seguintes indicadores:
+
+| Indicador | Descrição |
+|---|---|
+| Total | Soma dos valores da coluna |
+| Média | Média aritmética dos valores |
+| Mínimo | Menor valor identificado |
+| Máximo | Maior valor identificado |
+| Valores válidos | Quantidade de registros numéricos não nulos |
+
+Os indicadores são calculados automaticamente para as colunas numéricas identificadas pelo Pandas.
+
+### 5. Geração automática de relatórios
+
+Permite exportar os resultados da análise para um novo arquivo Excel.
+
+O relatório contém diferentes abas com informações organizadas e formatação automática.
+
+### 6. Formatação de planilhas
+
+O sistema utiliza a biblioteca `openpyxl` para aplicar:
+
+- Cabeçalhos destacados.
+- Cores alternadas nas linhas.
+- Ajuste automático de largura das colunas.
+- Filtros nos cabeçalhos.
+- Congelamento da primeira linha.
+
+## 🛠️ Tecnologias utilizadas
+
+| Tecnologia | Aplicação |
+|---|---|
+| Python | Desenvolvimento da aplicação |
+| Pandas | Leitura, manipulação e análise de dados |
+| OpenPyXL | Criação e formatação de arquivos Excel |
+| pathlib | Gerenciamento de arquivos e diretórios |
+| datetime | Registro de data e horário |
+| VS Code | Ambiente de desenvolvimento |
+| Git e GitHub | Versionamento e documentação |
+
+## 📁 Estrutura do projeto
+
+```text
+Automatizador-Relatorios-Excel/
+│
+├── automatizador_excel.py
+├── requirements.txt
+├── .gitignore
+└── README.md
+```
+
+**Descrição dos arquivos:**
+
+- `automatizador_excel.py`: código principal do sistema.
+- `requirements.txt`: bibliotecas necessárias.
+- `.gitignore`: configuração para ignorar arquivos temporários.
+- `README.md`: documentação do projeto.
+
+Os arquivos Excel utilizados para análise não precisam estar incluídos no repositório.
+
+## 🚀 Instalação e execução
+
+### Pré-requisitos
+
+- Python 3 instalado.
+- Terminal ou prompt de comando.
+- Uma planilha Excel para análise.
+
+### 1. Clonar o repositório
+
+```bash
+git clone https://github.com/WenndyFerreira/NOME-DO-REPOSITORIO.git
+```
+
+Substitua `NOME-DO-REPOSITORIO` pelo nome utilizado na publicação do projeto.
+
+### 2. Acessar a pasta
+
+```bash
+cd NOME-DO-REPOSITORIO
+```
+
+### 3. Instalar as dependências
+
+No Windows:
+
+```powershell
+py -m pip install pandas openpyxl
+```
+
+Para arquivos Excel antigos no formato `.xls`:
+
+```powershell
+py -m pip install xlrd
+```
+
+Também é possível instalar as dependências por meio do arquivo `requirements.txt`:
+
+```powershell
+py -m pip install -r requirements.txt
+```
+
+### 4. Executar o programa
+
+```powershell
+py automatizador_excel.py
+```
+
+## 💻 Interface do terminal
+
+Ao iniciar o programa, será apresentado o seguinte menu:
+
+```text
+================================================
+     AUTOMATIZADOR DE RELATÓRIOS EXCEL
+================================================
+
+[1] Importar planilha Excel
+[2] Visualizar dados importados
+[3] Consultar informações da base
+[4] Analisar indicadores
+[5] Gerar relatório Excel automático
+[0] Sair
+
+Escolha uma opção:
+```
+
+O usuário poderá selecionar a funcionalidade desejada digitando o número correspondente.
+
+## 📥 Importação de dados
+
+Na opção `1`, o sistema solicita o caminho do arquivo Excel.
+
+Exemplo:
+
+```text
+Digite o caminho do arquivo Excel:
+C:\Users\Usuario\Documents\planilha.xlsx
+```
+
+Após localizar o arquivo, o programa apresenta as abas disponíveis para seleção.
+
+A base selecionada será carregada para análise.
+
+**Importante:** a aplicação utiliza os dados existentes no arquivo e não gera informações fictícias.
+
+## 📊 Análise de dados
+
+Após importar a planilha, o usuário pode selecionar a opção `3` para consultar as características da base.
+
+Entre as informações analisadas estão:
+
+- Estrutura das colunas.
+- Tipos de dados.
+- Registros duplicados.
+- Campos sem preenchimento.
+
+A opção `4` permite calcular indicadores estatísticos sobre as colunas numéricas.
+
+Essa funcionalidade pode auxiliar na análise inicial de planilhas administrativas, financeiras, operacionais e outras bases estruturadas.
+
+Os resultados dependem das características e da qualidade dos dados importados.
+
+## 📄 Estrutura do relatório gerado
+
+Ao selecionar a opção `5`, o sistema cria automaticamente um arquivo Excel com as seguintes abas:
+
+| Aba | Conteúdo |
+|---|---|
+| Resumo Geral | Quantidade de registros, colunas, duplicidades e valores ausentes |
+| Qualidade dos Dados | Tipos de dados e quantidade de informações preenchidas |
+| Indicadores | Totais, médias, mínimos, máximos e valores válidos |
+| Base Importada | Dados originais da aba selecionada |
+
+A aba **Indicadores** será incluída quando a planilha possuir colunas numéricas.
+
+### Nome do relatório
+
+Os relatórios são gerados com data e horário no nome do arquivo:
+
+```text
+relatorio_20261013_213000.xlsx
+```
+
+Essa identificação facilita a organização e evita a substituição automática de relatórios gerados anteriormente com nomes diferentes.
+
+O relatório é salvo na pasta do projeto.
+
+## 🔒 Integridade e privacidade dos dados
+
+O sistema realiza a leitura e a análise dos dados localmente.
+
+A aplicação:
+
+- Não altera o arquivo Excel original.
+- Não exige conexão com bancos de dados externos.
+- Não envia os dados para serviços online.
+- Não exige informações pessoais para funcionar.
+- Gera um novo arquivo para armazenar os resultados.
+
+Recomenda-se não publicar planilhas contendo informações confidenciais, pessoais ou corporativas em repositórios públicos.
+
+## 📚 Conhecimentos aplicados
+
+O desenvolvimento deste projeto envolve:
+
+- Programação Python.
+- Manipulação de arquivos.
+- Estruturas condicionais e de repetição.
+- Criação de funções.
+- Tratamento de exceções.
+- Manipulação de DataFrames.
+- Análise exploratória de dados.
+- Estatística descritiva.
+- Identificação de inconsistências.
+- Automação de relatórios.
+- Formatação de planilhas Excel.
+- Organização de projetos de software.
+
+## 📈 Possíveis melhorias futuras
+
+O projeto poderá evoluir com a implementação de:
+
+- Interface gráfica utilizando Streamlit.
+- Gráficos automáticos.
+- Dashboards interativos.
+- Filtros personalizados.
+- Seleção de indicadores específicos.
+- Comparação entre diferentes planilhas.
+- Análise de dados por períodos.
+- Exportação de relatórios em PDF.
+- Integração com bancos de dados SQL.
+- Processamento de múltiplos arquivos simultaneamente.
+- Reconhecimento e conversão de colunas numéricas armazenadas como texto.
+
+## 🎓 Contexto acadêmico
+
+Projeto desenvolvido como parte dos meus estudos em **Análise e Desenvolvimento de Sistemas**, com o objetivo de aplicar conhecimentos de programação Python, análise de dados e automação de processos.
+
+A aplicação também representa a integração entre minha experiência em atividades administrativas e o desenvolvimento de competências técnicas em Tecnologia da Informação.
+
+Por meio deste projeto, busco demonstrar como ferramentas de programação podem contribuir para a organização, análise e apresentação de informações em ambientes profissionais.
+
+## 👨‍💻 Desenvolvedor
+
+**Wenndy Ferreira dos Santos**
+
+Estudante de Análise e Desenvolvimento de Sistemas — Anhanguera.
+
+Áreas de interesse: Desenvolvimento Python, Análise de Dados, Automação de Processos e Segurança da Informação.
+
+**GitHub:** https://github.com/WenndyFerreira
+
+**LinkedIn:** https://www.linkedin.com/in/wenndy-ferreira-875a32251
+
+---
+
+*Projeto acadêmico desenvolvido para fins educacionais e aprimoramento de competências técnicas em programação e análise de dados.*
